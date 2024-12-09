@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::factory()->create([
+            'email' => 'test@example.com',
+            'password' => bcrypt('password'),
+        ]);
         User::factory(10)->create();
 
         Wine::factory()->count(1000)->create();
