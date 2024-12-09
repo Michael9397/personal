@@ -7,7 +7,6 @@ Route::view('/', 'welcome');
 
 
 Route::resource('wine', WineController::class);
-Route::resource('wines', WineController::class);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

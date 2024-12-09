@@ -8,6 +8,12 @@ use Illuminate\Auth\Access\Response;
 
 class WinePolicy
 {
+    public function adminWine(User $user): bool
+    {
+        return $user->id <= 2;
+//            ? Response::allow()
+//            : Response::deny('You must be an administrator.');
+    }
     /**
      * Determine whether the user can view any models.
      */

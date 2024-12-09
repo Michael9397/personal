@@ -13,8 +13,9 @@ class WineController extends Controller
      */
     public function index()
     {
-        $wines = Wine::orderBy('time_tried', 'desc')->get();
-        return view('wines.index', compact('wines'));
+        return view('wine.index', [
+            'wines' => Wine::all(),
+        ]);
     }
 
     /**
@@ -22,7 +23,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        //
+        return view('wine.create');
     }
 
     /**
@@ -46,7 +47,7 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        //
+        return view('wine.edit', compact('wine'));
     }
 
     /**
