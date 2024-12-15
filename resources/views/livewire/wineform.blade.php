@@ -69,15 +69,15 @@ new class extends Component {
                     <x-text-input wire:model="form.from" name="from" id="from" class="w-full"/>
                 </div>
                 <div class="mb-5">
-                    <x-input-label for="type">Red or White</x-input-label>
+                    <x-input-label for="type">Liked it</x-input-label>
                     <select
                         id="liked-it"
                         wire:model="form.liked_it"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-900 dark:text-white"
                     >
                         <option value="" disabled selected>Did you like it?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
                     </select>
                     @error('form.liked_it') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                 </div>
