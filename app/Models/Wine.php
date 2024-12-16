@@ -14,6 +14,7 @@ class Wine extends Model
 
     protected $casts = [
         'time_tried' => 'date',
+        'liked_it' => 'boolean',
     ];
 
     protected function timeTriedFormatted(): Attribute
