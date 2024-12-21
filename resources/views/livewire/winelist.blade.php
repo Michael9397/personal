@@ -67,6 +67,12 @@ new class extends Component {
                             label="Name"
                         />
                         <x-sortable-column
+                            field="color"
+                            :sortField="$sortField"
+                            :sortDirection="$sortDirection"
+                            label="Color"
+                        />
+                        <x-sortable-column
                             field="type"
                             :sortField="$sortField"
                             :sortDirection="$sortDirection"
@@ -115,7 +121,10 @@ new class extends Component {
                                 {{ $wine->name }}
                             </th>
                             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
-                                <x-wine.icons.wine-glass :isRed="$wine->type == 'red'"/>
+                                <x-wine.icons.wine-glass :isRed="$wine->color == 'red'"/>
+                            </td>
+                            <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                {{ $wine->type }}
                             </td>
                             <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                 {{ $wine->from }}

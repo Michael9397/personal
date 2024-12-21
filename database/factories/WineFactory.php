@@ -18,7 +18,8 @@ class WineFactory extends Factory
     {
         return [
             'name' => fake()->word,
-            'type' => fake()->randomElement(['red', 'white']),
+            'color' => fake()->randomElement(['red', 'white']),
+            'type' => fake()->randomElement(['Chadonnay', 'Merlot', 'Cabernet', 'Pinot Noir', 'Sauvignon Blanc', 'Riesling', 'Syrah', 'Zinfandel', 'Malbec', 'Pinot Grigio', 'Champagne', 'Prosecco', 'Cava', 'Brut', 'Extra Dry', 'Demi-Sec', 'Sec', 'Doux']),
             'from' => fake()->city,
             'liked_it' => fake()->boolean,
             'notes' => fake()->sentence(rand(5, 30)),

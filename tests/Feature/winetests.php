@@ -69,13 +69,21 @@ it('cannot see the add wine button or the edit links when logged in as user 3', 
 });
 
 it('correctly adds up red and white wines', function() {
-    Wine::factory()->count(1)->create(['type' => 'red', 'liked_it' => 0]);
-    Wine::factory()->count(2)->create(['type' => 'red', 'liked_it' => 1]);
-    Wine::factory()->count(3)->create(['type' => 'white', 'liked_it' => 0]);
-    Wine::factory()->count(4)->create(['type' => 'white', 'liked_it' => 1]);
+    Wine::factory()->count(1)->create(['color' => 'red', 'liked_it' => 0]);
+    Wine::factory()->count(2)->create(['color' => 'red', 'liked_it' => 1]);
+    Wine::factory()->count(3)->create(['color' => 'white', 'liked_it' => 0]);
+    Wine::factory()->count(4)->create(['color' => 'white', 'liked_it' => 1]);
     $response = $this->get('/wine');
 
     $response->assertSee('2/3');
     $response->assertSee('4/7');
 });
 
+it('shows the type of wine on the table', function() {
+    Wine::factory()->count(1)->create(['type' => 'Merlot']);
+    Wine::factory()->count(1)->create(['type' => 'Chardonnay']);
+    $response = $this->get('/wine');
+
+    $response->assertSee('Merlot');
+    $response->assertSee('Chardonnay');
+});

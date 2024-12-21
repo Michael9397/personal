@@ -52,17 +52,21 @@ new class extends Component {
                     </div>
                 </div>
                 <div class="mb-5">
-                    <x-input-label for="form.type">Red or White</x-input-label>
+                    <x-input-label for="form.color">Red or White</x-input-label>
                     <select
                         id="type"
-                        wire:model="form.type"
+                        wire:model="form.color"
                         class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-900 dark:text-white"
                     >
                         <option value="" disabled selected>Select type</option>
                         <option value="red">Red</option>
                         <option value="white">White</option>
                     </select>
-                    @error('form.type') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                    @error('form.color') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+                </div>
+                <div class="mb-5">
+                    <x-input-label for="type">Test</x-input-label>
+                    <x-text-input wire:model="form.type" name="type" id="type" class="w-full"/>
                 </div>
                 <div class="mb-5">
                     <x-input-label for="from">From</x-input-label>

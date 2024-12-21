@@ -21,10 +21,10 @@ class WineStats extends Component
     {
         $this->wines = Wine::all();
         $this->totalWines = $this->wines->count();
-        $this->totalReds = $this->wines->where('type', 'red')->count();
-        $this->totalWhites = $this->wines->where('type', 'white')->count();
-        $this->totalRedsLiked = $this->wines->where('type', 'red')->where('liked_it', '1')->count();
-        $this->totalWhitesLiked = $this->wines->where('type', 'white')->where('liked_it', '1')->count();
+        $this->totalReds = $this->wines->where('color', 'red')->count();
+        $this->totalWhites = $this->wines->where('color', 'white')->count();
+        $this->totalRedsLiked = $this->wines->where('color', 'red')->where('liked_it', '1')->count();
+        $this->totalWhitesLiked = $this->wines->where('color', 'white')->where('liked_it', '1')->count();
         $this->whitesPercentage = $this->calculatePercentage($this->totalWhites, $this->totalWhitesLiked);
         $this->redsPercentage = $this->calculatePercentage($this->totalReds, $this->totalRedsLiked);
     }
