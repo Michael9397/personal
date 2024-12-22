@@ -65,7 +65,7 @@ new class extends Component {
                     @error('form.color') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                 </div>
                 <div class="mb-5">
-                    <x-input-label for="type">Test</x-input-label>
+                    <x-input-label for="type">Type</x-input-label>
                     <x-text-input wire:model="form.type" name="type" id="type" class="w-full"/>
                 </div>
                 <div class="mb-5">

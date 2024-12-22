@@ -33,7 +33,7 @@ class WineForm extends Form
             $wine = Wine::find($this->id);
             $wine->update($this->all());
         } else {
-            Wine::create($this->only('name', 'color', 'from', 'liked_it', 'notes', 'time_tried'));
+            Wine::create($this->only('name', 'color', 'type', 'from', 'liked_it', 'notes', 'time_tried'));
         }
     }
 
